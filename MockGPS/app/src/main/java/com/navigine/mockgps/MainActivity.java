@@ -27,7 +27,9 @@ public class MainActivity extends AppCompatActivity
 
         mManager.beginTransaction().add(R.id.main__frame_layout, mCustomLocation, "CustomLocation").hide(mCustomLocation).commitAllowingStateLoss();
         mManager.beginTransaction().add(R.id.main__frame_layout, mSelectOnMap, "SelectOnMap").commitAllowingStateLoss();
+        // mManager : FragmentManager로 섹션 나눈 듯
 
+        // 하단 네비게이션바 만드는 것 같음
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -35,9 +37,11 @@ public class MainActivity extends AppCompatActivity
                 switch (item.getItemId()) {
                     case R.id.select_on_map:
                         mManager.beginTransaction().hide(mCustomLocation).show(mSelectOnMap).commitAllowingStateLoss();
+                        // 이 케이스에선 mSelectOnMap(SelectOnMapFragment) 보여줌
                         break;
                     case R.id.custom_location:
                         mManager.beginTransaction().hide(mSelectOnMap).show(mCustomLocation).commitAllowingStateLoss();
+                        // 이 케이스에선 mCustomLocation(CustomlocationFragment) 보여줌
                         break;
                 }
                 return true;

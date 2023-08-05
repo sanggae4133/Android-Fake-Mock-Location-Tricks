@@ -1,5 +1,7 @@
 package com.navigine.mockgps;
 
+// map.html 보여줌
+
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.AppOpsManager;

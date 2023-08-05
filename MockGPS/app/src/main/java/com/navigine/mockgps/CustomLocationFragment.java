@@ -30,6 +30,7 @@ public class CustomLocationFragment extends Fragment {
 
         return view;
     }
+    // 화면 보여주는 파트
 
     static void setLatLng(String mLat, String mLng) {
         latitudeText = Double.parseDouble(mLat);
@@ -38,12 +39,15 @@ public class CustomLocationFragment extends Fragment {
         latitude.setText(mLat);
         longitude.setText(mLng);
     }
+    // 위도 경도 setting하기
 
     static String getLat() {
         return latitude.getText().toString();
     }
+    // 위도 가져오기
 
     static String getLng() {
         return longitude.getText().toString();
     }
+    // 경도 가져오기
 }
