@@ -9,6 +9,8 @@ import android.widget.EditText;
 
 import androidx.fragment.app.Fragment;
 
+import android.widget.Button;
+
 public class CustomLocationFragment extends Fragment {
 
     @SuppressLint("StaticFieldLeak")
@@ -24,13 +26,28 @@ public class CustomLocationFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_custom_location, container, false);
-
+        
         longitude = view.findViewById(R.id.longitude);
         latitude  = view.findViewById(R.id.latitude);
+        
+        // 추가 시작
+        Button button1 = (Button) findViewById(R.id.button1);
+        button1.setOnClickListener(new Button.setOnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // TODO : click event
+                R.id.longitude = 50;
+                R.id.latitude = 40;
+            }
+        });
+        //추가 끝
 
         return view;
     }
     // 화면 보여주는 파트
+
+
+
 
     static void setLatLng(String mLat, String mLng) {
         latitudeText = Double.parseDouble(mLat);

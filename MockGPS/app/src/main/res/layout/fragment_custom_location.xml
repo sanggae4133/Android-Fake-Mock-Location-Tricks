@@ -6,6 +6,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".CustomLocationFragment">
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button1"
+        android:text="Set Course" />
+
     <ImageView
         android:id="@+id/navigine_logo"
         android:layout_width="wrap_content"
